@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently Asked Questions about Primoxe Digital's brand building services, process, and pricing.">
+    <title>FAQ | Primoxe Digital</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Additional FAQ-specific styles -->
+    <style>
+        /* FAQ Search */
+        .faq-search {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            position: relative;
+        }
+
+        .faq-search input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-search input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .faq-search button {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ Categories */
+        .faq-category {
+            margin-bottom: 3rem;
+        }
+
+        .faq-category h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .faq-category h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        /* Enhanced FAQ Item */
+        .faq-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            content: '−';
+        }
+
+        .faq-answer {
+            padding: 0 1.25rem 1.25rem;
+            color: var(--text-light);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 1000px;
+            padding: 0 1.25rem 1.25rem;
+        }
+
+        .faq-answer p {
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact CTA in FAQ */
+        .faq-contact {
+            background-color: rgba(37, 99, 235, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .faq-contact h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Still have questions section */
+        .still-questions {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        @media (max-width: 768px) {
+            .faq-search {
+                margin-bottom: 2rem;
+            }
+
+            .faq-category h3 {
+                font-size: 1.5rem;
+            }
+
+            .faq-question {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .faq-answer {
+                padding: 0 1rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Universal Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">P</div>
+                <span>Primoxe <span class="text-accent">Digital</span></span>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html" class="active">FAQ</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-pulse">Get Started</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="container text-center">
+            <h1 class="fade-in-up">Frequently Asked Questions</h1>
+            <p class="fade-in delay-1">
+                Find answers to common questions about our services, process, and how we can help build your brand.
+                Can't find what you're looking for? <a href="#contact" style="color: var(--primary); font-weight: 600;">Contact us</a> directly.
+            </p>
+            <div class="faq-search fade-in delay-2">
+                <input type="text" placeholder="Search FAQs..." id="faqSearch">
+                <button type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main FAQ Content -->
+    <section class="section">
+        <div class="container">
+            <!-- Getting Started -->
+            <div class="faq-category fade-in">
+                <h3>Getting Started</h3>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I get started with Primoxe Digital?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Getting started is simple:</p>
+                        <ol>
+                            <li>Schedule a free consultation through our <a href="contact.html">contact page</a>.</li>
+                            <li>We'll discuss your business goals and challenges in a 30-minute call.</li>
+                            <li>We'll propose a customized plan based on your needs.</li>
+                            <li>Once you approve, we'll begin the onboarding process.</li>
+                        </ol>
+                        <p>Most clients are up and running within a week of signing up.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What information do I need to provide to begin?
+                    </button>
+                    <div class="faq-answer">
+                        <p>To get started, we'll need:</p>
+                        <ul>
+                            <li>Basic information about your business (industry, size, target audience)</li>
+                            <li>Your business goals and challenges</li>
+                            <li>Any existing brand assets (logo, website, marketing materials)</li>
+                            <li>Access to any current analytics or performance data</li>
+                            <li>Your preferred communication style and availability</li>
+                        </ul>
+                        <p>Don't worry if you don't have everything—we'll guide you through the process.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you work with startups or only established businesses?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We work with businesses of all sizes, from brand-new startups to established enterprises looking to rebrand or improve their market position.</p>
+                        <p>Our services are particularly valuable for:</p>
+                        <ul>
+                            <li>Startups needing to establish their brand from scratch</li>
+                            <li>Small businesses looking to professionalize their brand</li>
+                            <li>Growing companies needing to scale their brand identity</li>
+                            <li>Established businesses wanting to refresh their brand</li>
+                        </ul>
+                        <p>We tailor our approach based on your specific needs and budget.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What industries do you specialize in?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We have experience across diverse industries including:</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.5rem; margin: 1rem 0;">
+    <span style="display: flex; align-items: center; justify-content: center; height: 40px; padding: 2.5rem 1rem; background: rgba(37, 99, 235, 0.1); border-radius: 4px; text-align: center;">E-commerce</span>
+    <span style="display: flex; align-items: center; justify-content: center; height: 40px; padding: 2.5rem 1rem; background: rgba(37, 99, 235, 0.1); border-radius: 4px; text-align: center;">SaaS</span>
+    <span style="display: flex; align-items: center; justify-content: center; height: 40px; padding: 2.5rem 1rem; background: rgba(37, 99, 235, 0.1); border-radius: 4px; text-align: center;">Healthcare</span>
+    <span style="display: flex; align-items: center; justify-content: center; height: 40px; padding: 2.5rem 1rem; background: rgba(37, 99, 235, 0.1); border-radius: 4px; text-align: center;">Real Estate</span>
+    <span style="display: flex; align-items: center; justify-content: center; height: 40px; padding: 2.5rem 1rem; background: rgba(37, 99, 235, 0.1); border-radius: 4px; text-align: center;">FinTech</span>
+    <span style="display: flex; align-items: center; justify-content: center; height: 40px; padding: 2.5rem 1rem; background: rgba(37, 99, 235, 0.1); border-radius: 4px; text-align: center;">Professional Services</span>
+    <span style="display: flex; align-items: center; justify-content: center; height: 40px; padding: 2.5rem 1rem; background: rgba(37, 99, 235, 0.1); border-radius: 4px; text-align: center;">Nonprofits</span>
+    <span style="display: flex; align-items: center; justify-content: center; height: 40px; padding: 2.5rem 1rem; background: rgba(37, 99, 235, 0.1); border-radius: 4px; text-align: center;">Education</span>
+    <span style="display: flex; align-items: center; justify-content: center; height: 40px; padding: 2.5rem 1rem; background: rgba(37, 99, 235, 0.1); border-radius: 4px; text-align: center;">Hospitality</span>
+</div>
+
+
+                        <p>Our research-driven approach allows us to quickly understand any industry and create effective brand strategies.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services -->
+            <div class="faq-category fade-in delay-1">
+                <h3>Our Services</h3>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What services do you offer?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer comprehensive brand-building services:</p>
+                        <div style="margin: 1rem 0;">
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Brand Strategy:</strong>
+                                <ul>
+                                    <li>Market research and competitive analysis</li>
+                                    <li>Brand positioning and messaging</li>
+                                    <li>Target audience profiling</li>
+                                </ul>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Brand Identity:</strong>
+                                <ul>
+                                    <li>Logo design and visual identity</li>
+                                    <li>Color palette and typography</li>
+                                    <li>Brand guidelines and assets</li>
+                                </ul>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Digital Presence:</strong>
+                                <ul>
+                                    <li>Website design and development</li>
+                                    <li>Mobile app development</li>
+                                    <li>UI/UX design</li>
+                                </ul>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Marketing:</strong>
+                                <ul>
+                                    <li>Social media strategy and management</li>
+                                    <li>Content creation and marketing</li>
+                                    <li>Paid advertising campaigns</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Analytics:</strong>
+                                <ul>
+                                    <li>Performance tracking and reporting</li>
+                                    <li>Conversion optimization</li>
+                                    <li>Continuous improvement</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>We can provide these services individually or as part of a comprehensive brand-building package.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you offer à la carte services or only packages?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer both options:</p>
+                        <ul>
+                            <li><strong>Comprehensive packages</strong> that cover all aspects of brand building (recommended for best results)</li>
+                            <li><strong>Individual services</strong> for businesses that only need specific help (e.g., just logo design or only ad campaigns)</li>
+                        </ul>
+                        <p>During our consultation, we'll recommend the best approach based on your goals and budget.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How is Primoxe Digital different from other agencies?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Several key differences set us apart:</p>
+                        <div style="margin: 1rem 0;">
+                            <div style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+                                <div style="color: var(--primary); margin-right: 1rem; min-width: 30px;"><i class="fas fa-chart-line"></i></div>
+                                <div>
+                                    <strong>Data-Driven Approach:</strong> We base every decision on research and real performance data, not guesswork or trends.
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+                                <div style="color: var(--primary); margin-right: 1rem; min-width: 30px;"><i class="fas fa-project-diagram"></i></div>
+                                <div>
+                                    <strong>End-to-End Solution:</strong> From research to execution, we handle every aspect of brand building—no need to coordinate multiple vendors.
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+                                <div style="color: var(--primary); margin-right: 1rem; min-width: 30px;"><i class="fas fa-eye"></i></div>
+                                <div>
+                                    <strong>Transparency:</strong> No hidden fees or vague promises—just clear communication and honest advice about what will work for your business.
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+                                <div style="color: var(--primary); margin-right: 1rem; min-width: 30px;"><i class="fas fa-dollar-sign"></i></div>
+                                <div>
+                                    <strong>Cost-Effective:</strong> We maximize your budget with efficient processes and strategies that deliver the best ROI.
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 1rem; display: flex; align-items: flex-start;">
+                                <div style="color: var(--primary); margin-right: 1rem; min-width: 30px;"><i class="fas fa-rocket"></i></div>
+                                <div>
+                                    <strong>Results-Focused:</strong> Our ultimate measure of success is the impact we have on your business, not just delivering pretty designs.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can you help with both brand strategy and execution?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! This is one of our key strengths. Many agencies only offer one or the other, but we provide:</p>
+                        <ul>
+                            <li><strong>Comprehensive brand strategy</strong> based on research and data</li>
+                            <li><strong>Full execution</strong> of that strategy across all brand touchpoints</li>
+                            <li><strong>Continuous optimization</strong> based on performance metrics</li>
+                        </ul>
+                        <p>Having strategy and execution under one roof ensures consistency and better results.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process -->
+            <div class="faq-category fade-in delay-2">
+                <h3>Our Process</h3>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How long does the brand building process take?
+                    </button>
+                    <div class="faq-answer">
+                        <p>The timeline depends on the scope of work, but here's a general breakdown:</p>
+                        <ul>
+                            <li><strong>Discovery & Research:</strong> 3-5 days</li>
+                            <li><strong>Strategy Development:</strong> 5-7 days</li>
+                            <li><strong>Design & Development:</strong> 14-21 days</li>
+                            <li><strong>Launch & Optimization:</strong> Ongoing</li>
+                        </ul>
+                        <p>Most comprehensive brand builds take <strong>4-6 weeks</strong> from start to launch. We'll provide a detailed timeline during our consultation based on your specific needs.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What does your brand building process look like?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our process follows four main phases:</p>
+                        <div style="margin: 1rem 0;">
+                            <div style="margin-bottom: 1.5rem;">
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">1. Discovery & Research</h4>
+                                <p>We learn everything about your business, industry, and goals through interviews, market research, and competitive analysis.</p>
+                            </div>
+                            <div style="margin-bottom: 1.5rem;">
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">2. Strategy Development</h4>
+                                <p>We create a custom brand strategy including positioning, messaging, visual identity plan, and marketing strategy.</p>
+                            </div>
+                            <div style="margin-bottom: 1.5rem;">
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">3. Design & Execution</h4>
+                                <p>We bring your brand to life with professional design and development of all assets (logo, website, marketing materials, etc.).</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">4. Launch & Optimization</h4>
+                                <p>We launch your brand and continuously monitor performance, making data-driven improvements.</p>
+                            </div>
+                        </div>
+                        <p>See our <a href="how-it-works.html">How It Works</a> page for more details.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How involved do I need to be in the process?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We design our process to be collaborative but not overwhelming. Your involvement includes:</p>
+                        <ul>
+                            <li><strong>Initial discovery sessions</strong> (1-2 hours total)</li>
+                            <li><strong>Strategy approval</strong> (review and feedback)</li>
+                            <li><strong>Design feedback</strong> (typically 2-3 rounds)</li>
+                            <li><strong>Final review and launch</strong></li>
+                        </ul>
+                        <p>We handle all the heavy lifting—you just need to provide timely feedback at key milestones. Most clients spend <strong>2-4 hours per week</strong> during the active project phase.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What if I need changes after the project is complete?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer several options for post-launch support:</p>
+                        <ul>
+                            <li><strong>Ongoing support packages</strong> for continuous maintenance and optimization</li>
+                            <li><strong>One-off updates</strong> for specific changes or additions</li>
+                            <li><strong>Training sessions</strong> to empower you to make changes yourself</li>
+                        </ul>
+                        <p>Our goal is to create a brand that works for you long-term, and we're here to support that however works best for you.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing -->
+            <div class="faq-category fade-in delay-3">
+                <h3>Pricing & Plans</h3>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How much do your services cost?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our pricing depends on the scope of work. We offer three main plans:</p>
+                        <div style="margin: 1rem 0;">
+                            <div style="margin-bottom: 1rem; padding: 1rem; background: rgba(37, 99, 235, 0.05); border-radius: 8px;">
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Starter Plan: $999/month</h4>
+                                <p>Basic brand building for new businesses or simple rebrands.</p>
+                            </div>
+                            <div style="margin-bottom: 1rem; padding: 1rem; background: rgba(37, 99, 235, 0.1); border-radius: 8px; border: 2px solid var(--primary);">
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Growth Plan: $2,499/month (Most Popular)</h4>
+                                <p>Comprehensive brand building for businesses ready to scale.</p>
+                            </div>
+                            <div style="padding: 1rem; background: rgba(37, 99, 235, 0.05); border-radius: 8px;">
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Enterprise Plan: $4,999/month</h4>
+                                <p>Full-service brand building with dedicated team and priority support.</p>
+                            </div>
+                        </div>
+                        <p>We also offer custom solutions for businesses with specific needs. <a href="contact.html">Contact us</a> for a personalized quote.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you offer payment plans?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer flexible payment options:</p>
+                        <ul>
+                            <li><strong>Monthly payments</strong> for ongoing services</li>
+                            <li><strong>Project-based payments</strong> for one-time projects (typically 30% upfront, 40% midpoint, 30% on completion)</li>
+                            <li><strong>Quarterly payments</strong> for long-term engagements</li>
+                        </ul>
+                        <p>We'll work with you to find a payment structure that fits your budget and cash flow.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is there a long-term contract or can I cancel anytime?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our approach is flexible:</p>
+                        <ul>
+                            <li><strong>Month-to-month</strong> for ongoing services (30-day notice to cancel)</li>
+                            <li><strong>Project-based</strong> for one-time engagements (no long-term commitment)</li>
+                            <li><strong>Annual contracts</strong> with discounted rates for long-term partnerships</li>
+                        </ul>
+                        <p>We want you to stay with us because you're getting value, not because you're locked into a contract.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What's included in your pricing?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our pricing includes:</p>
+                        <ul>
+                            <li>Dedicated project manager</li>
+                            <li>All design and development work</li>
+                            <li>Regular progress updates</li>
+                            <li>Revisions based on your feedback</li>
+                            <li>Final deliverables in all necessary formats</li>
+                            <li>Basic training on managing your new assets</li>
+                        </ul>
+                        <p>There are no hidden fees—what we quote is what you'll pay. Any potential additional costs (like premium stock assets or advanced integrations) will be discussed and approved by you beforehand.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="faq-category fade-in delay-4">
+                <h3>Results & Success</h3>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do you measure success?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We measure success based on <strong>your business goals</strong>. Common metrics we track include:</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                            <div style="padding: 1rem; background: rgba(37, 99, 235, 0.05); border-radius: 8px;">
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Brand Awareness</h4>
+                                <ul>
+                                    <li>Website traffic</li>
+                                    <li>Social media growth</li>
+                                    <li>Search engine rankings</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 1rem; background: rgba(37, 99, 235, 0.05); border-radius: 8px;">
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Engagement</h4>
+                                <ul>
+                                    <li>Time on site</li>
+                                    <li>Social interactions</li>
+                                    <li>Content shares</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 1rem; background: rgba(37, 99, 235, 0.05); border-radius: 8px;">
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Conversions</h4>
+                                <ul>
+                                    <li>Lead generation</li>
+                                    <li>Sales conversions</li>
+                                    <li>Form submissions</li>
+                                </ul>
+                            </div>
+                            <div style="padding: 1rem; background: rgba(37, 99, 235, 0.05); border-radius: 8px;">
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Revenue</h4>
+                                <ul>
+                                    <li>ROI on ad spend</li>
+                                    <li>Customer lifetime value</li>
+                                    <li>Overall revenue growth</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>We'll work with you to define the most relevant KPIs for your business and provide regular reports on our progress.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can you show me examples of past results?
+                    </button>
+                    <div class="faq-answer">
+                        <p>While we respect our clients' confidentiality, we can share:</p>
+                        <ul>
+                            <li><strong>Case studies</strong> with anonymized results (available upon request)</li>
+                            <li><strong>Testimonials</strong> from satisfied clients (see our <a href="about.html">About page</a>)</li>
+                            <li><strong>General performance metrics</strong> across our client base:
+                                <ul>
+                                    <li>Average 35% increase in brand recognition</li>
+                                    <li>Typical 25-40% improvement in conversion rates</li>
+                                    <li>Average 30% reduction in customer acquisition costs</li>
+                                </ul>
+                            </li>
+                            <li><strong>Portfolio samples</strong> during our consultation process</li>
+                        </ul>
+                        <p>We'd be happy to discuss specific results relevant to your industry during our consultation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How long does it take to see results?
+                    </button>
+                    <div class="faq-answer">
+                        <p>The timeline for seeing results varies by service:</p>
+                        <div style="margin: 1rem 0;">
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Brand Strategy & Identity:</strong>
+                                <p>Immediate clarity on your brand direction, with full identity typically completed in 2-3 weeks.</p>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Website Development:</strong>
+                                <p>New sites typically launch in 4-6 weeks, with immediate improvements in user experience and conversions.</p>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Ad Campaigns:</strong>
+                                <p>Initial results within 2-4 weeks, with continuous optimization for better performance over time.</p>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Social Media:</strong>
+                                <p>Engagement improvements typically within 4-6 weeks, with growing results over time.</p>
+                            </div>
+                            <div>
+                                <strong>Overall Brand Impact:</strong>
+                                <p>Most clients see measurable business growth within 3-6 months of launching their new brand.</p>
+                            </div>
+                        </div>
+                        <p>We'll set clear expectations based on your specific goals during our consultation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What if I'm not happy with the results?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your satisfaction is our top priority. If you're not happy with any aspect of our work:</p>
+                        <ol>
+                            <li>We'll first work to understand your concerns and expectations.</li>
+                            <li>We'll make revisions until you're satisfied (within the scope of our agreement).</li>
+                            <li>If we still can't meet your expectations, we offer a satisfaction guarantee on all our services.</li>
+                        </ol>
+                        <p>We're confident in our process and have a <strong>100% satisfaction rate</strong> with our clients. Our goal is to build long-term partnerships based on trust and results.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="faq-contact fade-in delay-5" id="contact">
+                <h3>Still have questions?</h3>
+                <p>Our team is happy to help. Schedule a free consultation or send us a message.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="contact.html" class="btn btn-primary btn-pulse">
+                        <i class="fas fa-calendar-alt"></i> Schedule a Consultation
+                    </a>
+                    <a href="contact.html#contact-form" class="btn btn-outline mt-sm">
+                        <i class="fas fa-envelope"></i> Send Us a Message
+                    </a>
+                </div>
+            </div>
+
+            <!-- Technical -->
+            <div class="faq-category fade-in delay-6">
+                <h3>Technical Questions</h3>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What platforms do you work with?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We work with a wide range of platforms and technologies:</p>
+                        <div style="margin: 1rem 0;">
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Website Development:</strong>
+                                <ul>
+                                    <li>WordPress (our most common platform)</li>
+                                    <li>Shopify (for e-commerce)</li>
+                                    <li>Webflow</li>
+                                    <li>Custom HTML/CSS/JS solutions</li>
+                                    <li>React and Vue.js for advanced applications</li>
+                                </ul>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Mobile Apps:</strong>
+                                <ul>
+                                    <li>iOS (Swift)</li>
+                                    <li>Android (Kotlin)</li>
+                                    <li>React Native (cross-platform)</li>
+                                    <li>Flutter</li>
+                                </ul>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Marketing & Analytics:</strong>
+                                <ul>
+                                    <li>Google Ads, Facebook Ads, LinkedIn Ads</li>
+                                    <li>Google Analytics, Hotjar</li>
+                                    <li>HubSpot, Mailchimp, Klaviyo</li>
+                                    <li>SEO tools (Ahrefs, SEMrush, Moz)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Design:</strong>
+                                <ul>
+                                    <li>Adobe Creative Suite</li>
+                                    <li>Figma, Sketch</li>
+                                    <li>Canva (for client-friendly assets)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>If you have a preference or requirement for specific platforms, let us know during our consultation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do I need to have technical knowledge to work with you?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Not at all! We design our process to be accessible to clients with any level of technical expertise:</p>
+                        <ul>
+                            <li>We explain everything in plain language, without technical jargon</li>
+                            <li>We provide clear documentation and training</li>
+                            <li>We're always available to answer your questions</li>
+                            <li>We can recommend the best solutions based on your comfort level</li>
+                        </ul>
+                        <p>Many of our clients come to us with little to no technical background and leave feeling empowered to manage their new brand assets.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Will I own all the assets you create for me?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, you will have <strong>full ownership</strong> of all assets we create for you, including:</p>
+                        <ul>
+                            <li>Logo files in all formats (AI, EPS, PNG, SVG, etc.)</li>
+                            <li>Brand style guides and documentation</li>
+                            <li>Website files and content</li>
+                            <li>Mobile app source code (for custom development)</li>
+                            <li>All marketing materials and campaign assets</li>
+                        </ul>
+                        <p>We provide everything you need in organized, easy-to-access formats. For websites and apps built on proprietary platforms, we'll ensure you have full access and control.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do you handle website hosting and maintenance?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer flexible options for hosting and maintenance:</p>
+                        <div style="margin: 1rem 0;">
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Hosting:</strong>
+                                <ul>
+                                    <li>We can set up and manage hosting for you (recommended for most clients)</li>
+                                    <li>We can transfer your site to your preferred hosting provider</li>
+                                    <li>We recommend and can set up enterprise-grade hosting for optimal performance</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Maintenance:</strong>
+                                <ul>
+                                    <li>We offer ongoing maintenance packages</li>
+                                    <li>We provide training so you can handle basic updates yourself</li>
+                                    <li>We're always available for one-off updates or emergency support</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>Our standard hosting includes daily backups, security monitoring, and performance optimization.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Still Have Questions -->
+            <div class="still-questions fade-in delay-7">
+                <h2>Still Have Questions?</h2>
+                <p>We're here to help. Our team is happy to answer any other questions you might have.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="contact.html" class="btn btn-primary btn-pulse btn-lg">
+                        <i class="fas fa-question-circle"></i> Ask Us Directly
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="container bt-contact text-center">
+            <h2 class="fade-in-up">Ready to Build Your Brand?</h2>
+            <p class="fade-in delay-1">
+                Have more questions or ready to get started? Let's discuss how we can help you achieve your goals.
+            </p>
+            <div class="cta-buttons fade-in delay-2">
+                <a href="contact.html" class="btn btn-white btn-lg">
+                    Schedule a Free Consultation <i class="fas fa-calendar-alt ml-sm"></i>
+                </a>
+                <a href="services.html" class="btn btn-outline btn-lg" style="color: white; border-color: white;">
+                    View Our Services <i class="fas fa-arrow-right ml-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <a href="index.html" class="logo" style="color: white; margin-bottom: 1.5rem; display: inline-block;">
+                    <div class="logo-icon">P</div>
+                    <span>Primoxe <span style="color: var(--accent);">Digital</span></span>
+                </a>
+                <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
+                    Your all-in-one solution for building brands that work from day one.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html#brand-strategy">Brand Strategy</a></li>
+                    <li><a href="services.html#brand-identity">Logo & Identity</a></li>
+                    <li><a href="services.html#web-dev">Web Development</a></li>
+                    <li><a href="services.html#social-media">Social Media</a></li>
+                    <li><a href="services.html#ad-campaigns">Ad Campaigns</a></li>
+                    <li><a href="services.html#analytics">Analytics</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Branding Guide</a></li>
+                    <li><a href="#">Marketing Tips</a></li>
+                    <li><a href="#">Web Design Trends</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Primoxe Digital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active')
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // Show/hide back to top button
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Back to Top functionality
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // FAQ Accordion
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const isActive = question.classList.contains('active');
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('::after');
+
+                    // Close all other FAQ items in the same category
+                    const category = question.closest('.faq-category');
+                    category.querySelectorAll('.faq-question').forEach(q => {
+                        if (q !== question) {
+                            q.classList.remove('active');
+                            q.nextElementSibling.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current item
+                    if (!isActive) {
+                        question.classList.add('active');
+                        answer.classList.add('active');
+                    } else {
+                        question.classList.remove('active');
+                        answer.classList.remove('active');
+                    }
+                });
+            });
+
+            // FAQ Search functionality
+            const faqSearch = document.getElementById('faqSearch');
+            faqSearch.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const faqItems = document.querySelectorAll('.faq-item');
+
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+
+                        // Close mobile menu if open
+                        if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                    }
+                });
+            });
+
+            // Scroll animations
+            const checkVisibility = () => {
+                const fadeElements = document.querySelectorAll('.fade-in, .delay-1, .delay-2, .delay-3, .delay-4, .delay-5, .delay-6, .delay-7');
+
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (elementTop < windowHeight - 100) {
+                        // Add delay class if it exists
+                        if (element.classList.contains('delay-1')) {
+                            setTimeout(() => element.style.opacity = '1', 200);
+                        } else if (element.classList.contains('delay-2')) {
+                            setTimeout(() => element.style.opacity = '1', 400);
+                        } else if (element.classList.contains('delay-3')) {
+                            setTimeout(() => element.style.opacity = '1', 600);
+                        } else if (element.classList.contains('delay-4')) {
+                            setTimeout(() => element.style.opacity = '1', 800);
+                        } else if (element.classList.contains('delay-5')) {
+                            setTimeout(() => element.style.opacity = '1', 1000);
+                        } else if (element.classList.contains('delay-6')) {
+                            setTimeout(() => element.style.opacity = '1', 1200);
+                        } else if (element.classList.contains('delay-7')) {
+                            setTimeout(() => element.style.opacity = '1', 1400);
+                        } else {
+                            element.style.opacity = '1';
+                        }
+                    }
+                });
+            };
+
+            // Set initial opacity to 0 for fade-in elements
+            document.querySelectorAll('.fade-in, .delay-1, .delay-2, .delay-3, .delay-4, .delay-5, .delay-6, .delay-7').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transition = 'opacity 0.6s ease-out';
+            });
+
+            window.addEventListener('scroll', checkVisibility);
+            window.addEventListener('load', checkVisibility);
+        });
+    </script>
+</body>
+</html>

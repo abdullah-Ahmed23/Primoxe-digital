@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Primoxe Digital - Discover our story, meet our team, and learn about our mission to build brands that deliver real results.">
+    <title>About Us | Primoxe Digital</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Additional About Page Styles -->
+    <style>
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .left::after {
+            right: -10px;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-year {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Team Grid Enhancements */
+        .team-member-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .team-member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .team-member-image {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .team-member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-member-card:hover .team-member-image img {
+            transform: scale(1.05);
+        }
+
+        .team-member-social {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 1.5rem 1rem 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .team-member-card:hover .team-member-social {
+            transform: translateY(0);
+        }
+
+        .team-member-social a {
+            color: white;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member-social a:hover {
+            transform: translateY(-3px);
+        }
+
+        .team-member-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        /* Stats Counter */
+        .stats-counter {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            margin-bottom: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        /* Client Logos */
+        .client-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .client-logos:hover {
+            opacity: 1;
+        }
+
+        .client-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            transition: transform 0.3s ease;
+        }
+
+        .client-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            position: relative;
+            padding: 2rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+        }
+
+        .testimonial-quote {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Leadership Section */
+        .leadership-section {
+            background-color: rgba(37, 99, 235, 0.02);
+            padding: 3rem 0;
+            margin: 3rem 0;
+            border-radius: 12px;
+        }
+
+        /* Culture Section */
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .culture-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .culture-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Join Team */
+        .join-team {
+            background-color: rgba(37, 99, 235, 0.05);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 10px;
+            }
+
+            .timeline-item::after {
+                left: 20px;
+            }
+
+            .left::after, .right::after {
+                left: 20px;
+            }
+
+            .right {
+                left: 10px;
+            }
+
+            .team-member-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Universal Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">P</div>
+                <span>Primoxe <span class="text-accent">Digital</span></span>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-pulse">Get Started</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="container text-center">
+            <h1 class="fade-in-up">Building Brands That <span class="gradient-text">Deliver Results</span></h1>
+            <p class="fade-in delay-1" style="max-width: 800px; margin: 0 auto;">
+                We're not just another digital agency. We're a team of strategists, designers, and developers
+                who believe in creating brands that don't just look good—they <strong>generate real business results</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="section">
+        <div class="container">
+            <div class="story-section">
+                <div class="fade-in">
+                    <h2>Our <span class="gradient-text">Story</span></h2>
+                    <p class="mb-lg">
+                        Primoxe Digital was born from frustration—too many businesses were being sold
+                        marketing packages with no guaranteed results. Our founder, Alex Johnson,
+                        saw an opportunity to do things differently: <strong>build brands based on data,
+                        not just pretty designs</strong>.
+                    </p>
+                    <p class="mb-lg">
+                        Since 2018, we've helped hundreds of businesses—from scrappy startups to
+                        established enterprises—launch brands that actually work. Our secret?
+                        <strong>We combine research-driven strategy with creative execution</strong>, ensuring
+                        every brand we build is positioned for success from day one.
+                    </p>
+                    <blockquote style="font-style: italic; font-size: 1.2rem; color: var(--primary); border-left: 4px solid var(--primary); padding-left: 1.5rem; margin: 2rem 0;">
+                        "We don't just build brands. We build businesses."
+                    </blockquote>
+                </div>
+                <div class="fade-in delay-1">
+                    <img src="https://via.placeholder.com/600x400/2563eb/ffffff?text=Our+Journey" alt="Primoxe Digital Team" loading="lazy" style="width: 100%; border-radius: 12px; box-shadow: var(--shadow-md);">
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="timeline fade-in delay-2">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018</div>
+                        <h3>Founded with a Mission</h3>
+                        <p>Primoxe Digital launched with a clear mission: help businesses build brands that deliver measurable results, not just pretty designs.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2019</div>
+                        <h3>First 100 Clients</h3>
+                        <p>Reached our first 100 satisfied clients across diverse industries, proving our approach works for any business.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020</div>
+                        <h3>Expanded Services</h3>
+                        <p>Added web development and mobile app creation to our service offerings, becoming a true end-to-end brand building solution.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021</div>
+                        <h3>Data-Driven Approach</h3>
+                        <p>Refined our process with advanced analytics and performance tracking to ensure every brand we build is optimized for success.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2022</div>
+                        <h3>500+ Brands Built</h3>
+                        <p>Surpassed 500 successful brand launches, with clients seeing average revenue growth of 35% within the first year.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023-2024</div>
+                        <h3>Industry Recognition</h3>
+                        <p>Featured in major business publications and recognized as a top brand-building agency for our results-driven approach.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2025</div>
+                        <h3>Continuing to Grow</h3>
+                        <p>Expanding our team and services to help even more businesses build brands that deliver real, measurable results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="section" style="background-color: rgba(37, 99, 235, 0.02);">
+        <div class="container text-center">
+            <h2 class="section-title fade-in">Our <span class="gradient-text">Mission</span></h2>
+            <p class="section-subtitle fade-in delay-1">
+                To empower businesses with strategic, results-driven brand building that transforms
+                their vision into reality.
+            </p>
+
+            <div class="stats-counter fade-in delay-2">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="500">0</span>
+                    <div class="stat-description">Brands Built</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="35">0</span>
+                    <div class="stat-description">Average Revenue Growth%</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="98">0</span>
+                    <div class="stat-description">Client Satisfaction%</div>
+                </div>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto 3rem;">
+                <p class="fade-in delay-3" style="font-size: 1.1rem;">
+                    We believe every company deserves a brand that:
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div class="card mission-card fade-in delay-4">
+                        <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Actually Works</h3>
+                        <p>No fluff, no empty promises—just strategies that generate real business results.</p>
+                    </div>
+
+                    <div class="card mission-card fade-in delay-5">
+                        <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Grows With You</h3>
+                        <p>Built to scale as your business evolves, not just for the launch phase.</p>
+                    </div>
+
+                    <div class="card mission-card fade-in delay-6">
+                        <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Represents You</h3>
+                        <p>Authentically communicates your values and connects with your audience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="section leadership-section">
+        <div class="container text-center">
+            <h2 class="section-title fade-in">Our <span class="gradient-text">Leadership</span></h2>
+            <p class="section-subtitle fade-in delay-1">
+                Meet the experienced professionals who guide our team and strategy.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <!-- Alex Johnson - CEO -->
+                <div class="team-member-card fade-in delay-2">
+                    <div class="team-member-image">
+                        <img src="https://via.placeholder.com/400x500/2563eb/ffffff?text=Alex+Johnson" alt="Alex Johnson - CEO" loading="lazy">
+                        <div class="team-member-social">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Alex Johnson</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">CEO & Founder</p>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">
+                            With 15+ years in digital marketing, Alex founded Primoxe Digital to help businesses
+                            build brands that actually work. His strategic approach has helped hundreds of companies
+                            achieve measurable growth.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sarah Chen - Creative Director -->
+                <div class="team-member-card fade-in delay-3">
+                    <div class="team-member-image">
+                        <img src="https://via.placeholder.com/400x500/1e40af/ffffff?text=Sarah+Chen" alt="Sarah Chen - Creative Director" loading="lazy">
+                        <div class="team-member-social">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Sarah Chen</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Creative Director</p>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">
+                            Sarah leads our design team with a focus on creating visually compelling brands that
+                            communicate effectively. Her award-winning designs have helped clients stand out in
+                            competitive markets.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Michael Rodriguez - Technical Director -->
+                <div class="team-member-card fade-in delay-4">
+                    <div class="team-member-image">
+                        <img src="https://via.placeholder.com/400x500/1d4ed8/ffffff?text=Michael+Rodriguez" alt="Michael Rodriguez - Technical Director" loading="lazy">
+                        <div class="team-member-social">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Michael Rodriguez</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Technical Director</p>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">
+                            Michael oversees our development team, ensuring every website and application we build
+                            is fast, secure, and optimized for conversions. His expertise in UX/UI design ensures
+                            our digital products deliver real results.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="section">
+        <div class="container text-center">
+            <h2 class="section-title fade-in">Meet Our <span class="gradient-text">Team</span></h2>
+            <p class="section-subtitle fade-in delay-1">
+                Our diverse team brings together expertise in strategy, design, development, and marketing
+                to create comprehensive brand solutions.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <!-- Team Member 1 -->
+                <div class="team-member-card fade-in delay-2">
+                    <div class="team-member-image">
+                        <img src="https://via.placeholder.com/400x500/3b82f6/ffffff?text=Emily+Wilson" alt="Emily Wilson - Marketing Director" loading="lazy">
+                        <div class="team-member-social">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Emily Wilson</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Marketing Director</p>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">
+                            Emily leads our marketing team with a focus on creating campaigns that deliver measurable
+                            ROI through targeted digital marketing strategies.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-member-card fade-in delay-3">
+                    <div class="team-member-image">
+                        <img src="https://via.placeholder.com/400x500/2563eb/ffffff?text=David+Kim" alt="David Kim - Strategy Director" loading="lazy">
+                        <div class="team-member-social">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member-info">
+                        <h3>David Kim</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Strategy Director</p>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">
+                            David brings expertise in brand strategy and market research, ensuring our clients'
+                            brands are positioned for success in their industries.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-member-card fade-in delay-4">
+                    <div class="team-member-image">
+                        <img src="https://via.placeholder.com/400x500/1e40af/ffffff?text=Jessica+Martinez" alt="Jessica Martinez - Client Success Manager" loading="lazy">
+                        <div class="team-member-social">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Jessica Martinez</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Client Success Manager</p>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">
+                            Jessica ensures every client has a smooth experience, keeping projects on track
+                            and on budget while maintaining clear communication.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="team-member-card fade-in delay-5">
+                    <div class="team-member-image">
+                        <img src="https://via.placeholder.com/400x500/1d4ed8/ffffff?text=Ryan+Lee" alt="Ryan Lee - Senior Designer" loading="lazy">
+                        <div class="team-member-social">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Ryan Lee</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Senior Designer</p>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">
+                            Ryan creates visually stunning brand identities that capture our clients' essence
+                            and resonate with their target audiences.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Team Member 5 -->
+                <div class="team-member-card fade-in delay-6">
+                    <div class="team-member-image">
+                        <img src="https://via.placeholder.com/400x500/3b82f6/ffffff?text=Lisa+Chen" alt="Lisa Chen - Senior Developer" loading="lazy">
+                        <div class="team-member-social">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Lisa Chen</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Senior Developer</p>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">
+                            Lisa builds fast, secure, and user-friendly websites and applications that
+                            help our clients achieve their business goals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Culture -->
+    <section class="section" style="background-color: rgba(37, 99, 235, 0.02);">
+        <div class="container text-center">
+            <h2 class="section-title fade-in">Our <span class="gradient-text">Culture</span></h2>
+            <p class="section-subtitle fade-in delay-1">
+                Our culture is built on collaboration, creativity, and a shared passion for helping businesses succeed.
+            </p>
+
+            <div class="culture-grid">
+                <div class="culture-item fade-in delay-2">
+                    <div class="culture-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovative</h3>
+                    <p>We're always exploring new ideas and technologies to deliver better results for our clients.</p>
+                </div>
+
+                <div class="culture-item fade-in delay-3">
+                    <div class="culture-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data-Driven</h3>
+                    <p>Every decision we make is backed by research and performance metrics.</p>
+                </div>
+
+                <div class="culture-item fade-in delay-4">
+                    <div class="culture-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Collaborative</h3>
+                    <p>We work together as a team and with our clients to achieve the best possible outcomes.</p>
+                </div>
+
+                <div class="culture-item fade-in delay-5">
+                    <div class="culture-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Positive</h3>
+                    <p>We maintain an optimistic, can-do attitude even when facing challenges.</p>
+                </div>
+
+                <div class="culture-item fade-in delay-6">
+                    <div class="culture-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Results-Focused</h3>
+                    <p>Our ultimate measure of success is the impact we have on our clients' businesses.</p>
+                </div>
+
+                <div class="culture-item fade-in delay-7">
+                    <div class="culture-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Client-Centric</h3>
+                    <p>Our clients' success is our success. We're invested in their growth as much as they are.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="section">
+        <div class="container text-center">
+            <h2 class="section-title fade-in">What Our <span class="gradient-text">Clients Say</span></h2>
+            <p class="section-subtitle fade-in delay-1">
+                Hear from businesses we've helped build successful brands.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card fade-in delay-2">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        Primoxe Digital transformed our brand from scratch. Their research-driven approach ensured we stood out
+                        in a crowded market. The results speak for themselves—our revenue increased by 40% in the first
+                        quarter after launch.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/80x80/2563eb/ffffff?text=JD" alt="John Doe" loading="lazy">
+                        <div class="author-info">
+                            <h4>John Doe</h4>
+                            <p>CEO, TechStart</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card fade-in delay-3">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        Working with Primoxe was a game-changer for our business. Their team took the time to understand
+                        our unique challenges and created a brand that truly represents who we are. The process was
+                        smooth and the results exceeded our expectations.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/80x80/1e40af/ffffff?text=SM" alt="Sarah Miller" loading="lazy">
+                        <div class="author-info">
+                            <h4>Sarah Miller</h4>
+                            <p>Marketing Director, EcoBrand</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card fade-in delay-4">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        The website and mobile app Primoxe built for us have been instrumental in our growth. Their attention
+                        to detail and focus on user experience has significantly improved our conversion rates. I highly
+                        recommend their services to any business looking to elevate their digital presence.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/80x80/1d4ed8/ffffff?text=AL" alt="Alex Lee" loading="lazy">
+                        <div class="author-info">
+                            <h4>Alex Lee</h4>
+                            <p>Founder, HealthApp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Logos -->
+    <section class="section">
+        <div class="container text-center">
+            <h2 class="section-title fade-in">Trusted By</h2>
+            <p class="section-subtitle fade-in delay-1">
+                We've helped companies across industries build brands that work.
+            </p>
+
+            <div class="client-logos fade-in delay-2">
+                <div class="client-logo">
+                    <img src="https://via.placeholder.com/200x100/2563eb/ffffff?text=TechStart" alt="TechStart Logo" loading="lazy" style="max-height: 60px; width: auto;">
+                </div>
+                <div class="client-logo">
+                    <img src="https://via.placeholder.com/200x100/1e40af/ffffff?text=EcoBrand" alt="EcoBrand Logo" loading="lazy" style="max-height: 60px; width: auto;">
+                </div>
+                <div class="client-logo">
+                    <img src="https://via.placeholder.com/200x100/1d4ed8/ffffff?text=HealthApp" alt="HealthApp Logo" loading="lazy" style="max-height: 60px; width: auto;">
+                </div>
+                <div class="client-logo">
+                    <img src="https://via.placeholder.com/200x100/3b82f6/ffffff?text=FinTech+Solutions" alt="FinTech Solutions Logo" loading="lazy" style="max-height: 60px; width: auto;">
+                </div>
+                <div class="client-logo">
+                    <img src="https://via.placeholder.com/200x100/2563eb/ffffff?text=RetailPro" alt="RetailPro Logo" loading="lazy" style="max-height: 60px; width: auto;">
+                </div>
+                <div class="client-logo">
+                    <img src="https://via.placeholder.com/200x100/1e40af/ffffff?text=EduTech" alt="EduTech Logo" loading="lazy" style="max-height: 60px; width: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Our Team -->
+    <section class="section">
+        <div class="container">
+            <div class="join-team fade-in">
+                <h2 class="gradient-text">Join Our Team</h2>
+                <p style="margin: 1.5rem 0; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    We're always looking for talented, passionate people to join our growing team.
+                    If you're excited about building brands that deliver real results, we'd love to hear from you.
+                </p>
+                <a href="#" class="btn btn-primary btn-pulse btn-lg mt-md">
+                    <i class="fas fa-users"></i> View Open Positions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="container bt-contact text-center">
+            <h2 class="fade-in-up">Ready to Build Your Brand?</h2>
+            <p class="fade-in delay-1">
+                Join hundreds of businesses who've successfully launched and grown their brands with Primoxe Digital.
+                Let's discuss how we can help you achieve your goals.
+            </p>
+            <div class="cta-buttons fade-in delay-2">
+                <a href="contact.html" class="btn btn-white btn-lg">
+                    Schedule a Free Consultation <i class="fas fa-calendar-alt ml-sm"></i>
+                </a>
+                <a href="services.html" class="btn btn-outline btn-lg" style="color: white; border-color: white;">
+                    View Our Services <i class="fas fa-arrow-right ml-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <a href="index.html" class="logo" style="color: white; margin-bottom: 1.5rem; display: inline-block;">
+                    <div class="logo-icon">P</div>
+                    <span>Primoxe <span style="color: var(--accent);">Digital</span></span>
+                </a>
+                <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
+                    Your all-in-one solution for building brands that work from day one.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html#brand-strategy">Brand Strategy</a></li>
+                    <li><a href="services.html#brand-identity">Logo & Identity</a></li>
+                    <li><a href="services.html#web-dev">Web Development</a></li>
+                    <li><a href="services.html#social-media">Social Media</a></li>
+                    <li><a href="services.html#ad-campaigns">Ad Campaigns</a></li>
+                    <li><a href="services.html#analytics">Analytics</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Primoxe Digital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active')
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Stats Counter Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const stats = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const stat = entry.target;
+                        const countTo = parseInt(stat.getAttribute('data-count'));
+                        const duration = 2000; // 2 seconds
+                        const start = 0;
+                        const increment = countTo / (duration / 16); // 60fps
+
+                        let current = start;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= countTo) {
+                                current = countTo;
+                                clearInterval(timer);
+                            }
+                            stat.textContent = Math.floor(current);
+                        }, 16);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            stats.forEach(stat => {
+                observer.observe(stat);
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+
+                        // Close mobile menu if open
+                        if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
