@@ -1,0 +1,30 @@
+/* css/_variables.css */
+:root {
+  /* Your existing color palette (update these if needed) */
+  --primary: #2563eb;        /* Primary brand blue */
+  --primary-dark: #1d4ed8;   /* Darker blue for hovers */
+  --secondary: #1e40af;      /* Secondary blue */
+  --accent: #3b82f6;         /* Accent blue */
+  --light: #f8fafc;          /* Light gray background */
+  --dark: #1e293b;           /* Dark text */
+  --text: #1e293b;           /* Body text */
+  --text-light: #64748b;     /* Light text (subtitles) */
+
+  /* Spacing (8px baseline) */
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  /* Typography */
+  --font-base: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+}

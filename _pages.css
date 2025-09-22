@@ -1,0 +1,468 @@
+/* css/_pages.css */
+/* =============================================
+   PAGE-SPECIFIC STYLES: Overrides/Extensions for Individual Pages
+   ============================================= */
+
+/* --------------------------------------------
+   1. HOMEPAGE (index.html)
+   -------------------------------------------- */
+/* Hero Section Overrides */
+.home .hero {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(255, 255, 255, 1) 50%);
+}
+
+/* Process Steps (Homepage) */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.process-step {
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto var(--space-sm);
+}
+
+/* CTA Section (Homepage) */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section h2 {
+  color: white;
+}
+
+.cta-section p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* --------------------------------------------
+   2. SERVICES PAGE (services.html)
+   -------------------------------------------- */
+/* Services Hero */
+.services-hero {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  background-color: rgba(37, 99, 235, 0.02);
+}
+
+.services-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.services-hero p {
+  max-width: 800px;
+  margin: 0 auto var(--space-lg);
+}
+
+/* Service Details (Expanded Cards) */
+.service-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  align-items: center;
+}
+
+.service-detail-content h3 {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+  color: var(--dark);
+}
+
+.service-detail-content p {
+  margin-bottom: var(--space-md);
+}
+
+.service-detail-image {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.service-detail-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.service-detail-image:hover img {
+  transform: scale(1.03);
+}
+
+/* Pricing Section */
+.pricing-section {
+  background-color: rgba(37, 99, 235, 0.02);
+  padding: var(--space-xl) var(--space-md);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.pricing-card {
+  background: white;
+  padding: var(--space-lg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  position: relative;
+}
+
+.pricing-card.featured {
+  border: 2px solid var(--primary);
+  transform: scale(1.05);
+}
+
+.pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.pricing-card .price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: var(--space-sm);
+}
+
+.pricing-card .period {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: var(--space-md);
+}
+
+.pricing-card ul {
+  list-style: none;
+  text-align: left;
+  margin-bottom: var(--space-lg);
+}
+
+.pricing-card li {
+  padding: 0.25rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.pricing-card li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--success);
+  font-weight: bold;
+}
+
+/* --------------------------------------------
+   3. HOW IT WORKS PAGE (how-it-works.html)
+   -------------------------------------------- */
+/* Step-by-Step Process */
+.process-flow {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.process-flow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: var(--primary);
+  z-index: 1;
+}
+
+.process-step-item {
+  display: flex;
+  margin-bottom: var(--space-lg);
+  position: relative;
+}
+
+.process-step-item::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 3px solid var(--primary);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.process-step-content {
+  width: 50%;
+  padding: var(--space-sm) var(--space-md);
+}
+
+.process-step-content.right {
+  margin-left: auto;
+}
+
+.process-step-content h3 {
+  color: var(--primary);
+  margin-bottom: var(--space-sm);
+}
+
+/* --------------------------------------------
+   4. ABOUT PAGE (about.html)
+   -------------------------------------------- */
+/* Team Section */
+.team-section {
+  padding: var(--space-xl) var(--space-md);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto var(--space-md);
+  box-shadow: var(--shadow-md);
+}
+
+.team-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.team-card p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* Story Section */
+.story-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.story-content h2 {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.story-content p {
+  margin-bottom: var(--space-md);
+}
+
+/* --------------------------------------------
+   5. CONTACT PAGE (contact.html)
+   -------------------------------------------- */
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: var(--space-lg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: var(--font-base);
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+/* Contact Info */
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.contact-item {
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.contact-item i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: var(--space-sm);
+}
+
+.contact-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* --------------------------------------------
+   6. FAQ PAGE (faq.html)
+   -------------------------------------------- */
+/* FAQ Accordion */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: var(--space-sm);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: var(--space-md);
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.faq-question:hover {
+  background-color: rgba(37, 99, 235, 0.05);
+}
+
+.faq-question::after {
+  content: "+";
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+
+.faq-question.active::after {
+  content: "−";
+}
+
+.faq-answer {
+  padding: 0 var(--space-md) var(--space-md);
+  color: var(--text-light);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.faq-answer.active {
+  max-height: 500px; /* Adjust based on content */
+}
+
+/* --------------------------------------------
+   7. RESPONSIVE ADJUSTMENTS
+   -------------------------------------------- */
+@media (max-width: 768px) {
+  /* Homepage */
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.25rem;
+  }
+
+  /* Services Page */
+  .service-detail {
+    grid-template-columns: 1fr;
+  }
+
+  /* How It Works Page */
+  .process-step-content {
+    width: 100%;
+  }
+
+  .process-flow::before {
+    left: 20px;
+  }
+
+  .process-step-item::before {
+    left: 20px;
+  }
+
+  .process-step-content.right {
+    margin-left: 0;
+  }
+
+  /* About Page */
+  .story-section {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact Page */
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+}
